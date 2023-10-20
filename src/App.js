@@ -1,22 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+import Data from "./composants/Data";
+
+const setting = axios.get('http://192.168.1.100/settings')
+    .then(function (response) {
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
+const status = axios.get('http://192.168.1.100/status')
+    .then(function (response) {
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+
+const actions = axios.get('http://192.168.1.100/settings/actions')
+    .then(function (response) {
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+
 
 function App() {
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <Data/>
       </header>
     </div>
   );
